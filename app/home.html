@@ -37,9 +37,9 @@
 
     <!-- CARDS -->
     <div class="container p-0 cards">
-        <div class="row card-group p-0">
+        <div class="row card-group p-0 ">
             <div class="col px-0">
-                <div class="card border-primary">
+                <div class="card border-primary bg-success-subtle">
                     <div class="card-header">
                         <h5 class="card-title">Balance</h5>
                         <i class="fa-solid fa-circle-up fa-1x"></i>
@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="col px-2">
-                <div class="card border-primary">
+                <div class="card border-primary bg-danger-subtle">
                     <div class="card-header">
                         <h5 class="card-title">Bill</h5>
                         <i class="fa-solid fa-circle-down fa-1x"></i>
@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="col px-0">
-                <div class="card border-primary">
+                <div class="card border-primary bg-warning-subtle">
                     <div class="card-header">
                         <h5 class="card-title">Total</h5>
                         <i class="fa-solid fa-sack-dollar fa-1x"></i>
@@ -78,84 +78,87 @@
                 </div>
             </div>
         </div>
+        <div class="container px-0 py-2">
+            <form class="row py-4 bg-black">
+                <div class="col mx-auto">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" class="form-control" id="description" placeholder="Description">
+                </div>
+                <div class="col mx-auto">
+                    <label for="transactions" class="form-label">Transaction</label>
+                    <input type="text" class="form-control" id="transactions" placeholder="transactions">
+                </div>
+                <div class="col mx-auto">
+                    <label for="exampleDataList" class="form-label">Datalist example</label>
+                    <input class="form-control" list="datalistOptions" id="exampleDataList"
+                        placeholder="Type to search...">
+                    <datalist id="datalistOptions">
+                        <option value="Bill">
+                        <option value="Deposit">
+                    </datalist>
+                </div>
+                <!-- <div class="col d-grid mx-auto"></div> -->
+                <div class="col d-grid mx-auto">
+                    <button type="submit" class="btn btn-light">Confirm</button>
+                </div>
+            </form>
+            <div class="row px-0 py-3">
+                <div class="navbar bg-black">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Transactions</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Handle</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                                <td>@fat</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- TABLE -->
-    <div class="container px-0 py-2">
-        <div class="row">
-            <div class="navbar">
-                <form class="row px-1">
-                    <div class="col-4">
-                        <label for="description" class="form-label">Description</label>
-                        <input type="text" class="form-control" id="description" placeholder="Description">
-                    </div>
-                    <div class="col">
-                        <label for="transactions" class="form-label">Transaction</label>
-                        <input type="text" class="form-control" id="transactions" placeholder="transactions">
-                    </div>
-                    <div class="col">
-                        <label for="exampleDataList" class="form-label">Datalist example</label>
-                        <input class="form-control" list="datalistOptions" id="exampleDataList"
-                            placeholder="Type to search...">
-                        <datalist id="datalistOptions">
-                            <option value="Bill">
-                            <option value="Deposit">
-                        </datalist>
-                    </div>
-                    <div class="col-2">
-                        <button type="submit" class="btn btn-light">Confirm identity</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="row py-2">
-            <div class="navbar">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">Transactions</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Handle</th>
-                        </tr>
-                    </thead>
-                    <tbody class="table-group-divider">
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
 
 
 </body>
