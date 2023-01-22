@@ -18,152 +18,141 @@
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/61b0bb6108.js" crossorigin="anonymous"></script>
 
-    <div class="content">
-        <!-- NAVBAR -->
-        <div class="container navbarTop">
-            <div class="row" id="">
-                <nav class="navbar navbar-expand-lg fixed-top bg-warning">
-                    <div class="container-fluid justify-content-center" id="navbar-itens">
-                        <ul class="nav">
-                            <li class="nav-item">
-                                <i class="navbar-brand fa-solid fa-landmark fa-3x"></i>
-                            </li>
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <li class="nav-item navbar-collapse">
-                                    <h2 class="navbar-item disabled">Financial Management</h2>
-                                </li>
-                            </div>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
 
-            <!-- CARDS -->
-
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid justify-content-center" id="navbar-itens">
+            <ul class="nav">
+                <li class="nav-item">
+                    <i class="navbar-brand fa-solid fa-landmark fa-3x"></i>
+                </li>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <li class="nav-item navbar-collapse">
+                        <h2 class="navbar-item disabled">Financial Management</h2>
+                    </li>
+                </div>
+            </ul>
         </div>
+    </nav>
 
-        <!-- FUTURE FEATURE -->
-        <div class="container p-5"></div>
-
-        <!-- CARDS -->
-        <div class="container p-0">
-            <div class="row card-group p-0">
-                <div class="col px-0">
-                    <div class="card border-primary">
-                        <div class="card-header">
-                            <h5 class="card-title">Balance</h5>
-                            <i class="fa-solid fa-circle-up fa-1x"></i>
-                        </div>
-                        <div class="card-body">
-
-                            <h4 class="card-text">$ 100.000</h4>
-                        </div>
-                        <div class="card-footer bg-transparent border-success">Footer</div>
+    <!-- CARDS -->
+    <div class="container p-0 cards">
+        <div class="row card-group p-0">
+            <div class="col px-0">
+                <div class="card border-primary">
+                    <div class="card-header">
+                        <h5 class="card-title">Balance</h5>
+                        <i class="fa-solid fa-circle-up fa-1x"></i>
                     </div>
+                    <div class="card-body">
+
+                        <h4 class="card-text">$ 100.000</h4>
+                    </div>
+                    <div class="card-footer bg-transparent border-success">Footer</div>
                 </div>
-                <div class="col px-2">
-                    <div class="card border-primary">
-                        <div class="card-header">
-                            <h5 class="card-title">Bill</h5>
-                            <i class="fa-solid fa-circle-down fa-1x"></i>
-                        </div>
-                        <div class="card-body">
-
-                            <h4 class="card-text">$ 10.000</h4>
-                        </div>
-                        <div class="card-footer bg-transparent border-danger">Footer</div>
+            </div>
+            <div class="col px-2">
+                <div class="card border-primary">
+                    <div class="card-header">
+                        <h5 class="card-title">Bill</h5>
+                        <i class="fa-solid fa-circle-down fa-1x"></i>
                     </div>
+                    <div class="card-body">
+
+                        <h4 class="card-text">$ 10.000</h4>
+                    </div>
+                    <div class="card-footer bg-transparent border-danger">Footer</div>
                 </div>
-                <div class="col px-0">
-                    <div class="card border-primary">
-                        <div class="card-header">
-                            <h5 class="card-title">Total</h5>
-                            <i class="fa-solid fa-sack-dollar fa-1x"></i>
-                        </div>
-                        <div class="card-body">
-
-                            <h4 class="card-text">$ 10.000</h4>
-                        </div>
-                        <div class="card-footer bg-transparent border-success">Footer</div>
+            </div>
+            <div class="col px-0">
+                <div class="card border-primary">
+                    <div class="card-header">
+                        <h5 class="card-title">Total</h5>
+                        <i class="fa-solid fa-sack-dollar fa-1x"></i>
                     </div>
+                    <div class="card-body">
+
+                        <h4 class="card-text">$ 10.000</h4>
+                    </div>
+                    <div class="card-footer bg-transparent border-success">Footer</div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- TABLE -->
-        <div class="container px-0 py-2">
-            <div class="row">
-                <div class="navbar bg-success">
-                    <form class="row px-1">
-                        <div class="col-4">
-                            <label for="description" class="form-label">Iten</label>
-                            <input type="text" class="form-control" id="description" placeholder="Description">
-                        </div>
-                        <div class="col">
-                            <label for="transactions" class="form-label">Transaction</label>
-                            <input type="text" class="form-control" id="transactions" placeholder="transactions">
-                        </div>
-                        <div class="col">
-                            <label for="exampleDataList" class="form-label">Datalist example</label>
-                            <input class="form-control" list="datalistOptions" id="exampleDataList"
-                                placeholder="Type to search...">
-                            <datalist id="datalistOptions">
-                                <option value="Bill">
-                                <option value="Deposit">
-                            </datalist>
-                        </div>
-                        <div class="col-2">
-                            <button type="submit" class="btn btn-light">Confirm identity</button>
-                        </div>
-                    </form>
-                </div>
+    <!-- TABLE -->
+    <div class="container px-0 py-2">
+        <div class="row">
+            <div class="navbar bg-success">
+                <form class="row px-1">
+                    <div class="col-4">
+                        <label for="description" class="form-label">Iten</label>
+                        <input type="text" class="form-control" id="description" placeholder="Description">
+                    </div>
+                    <div class="col">
+                        <label for="transactions" class="form-label">Transaction</label>
+                        <input type="text" class="form-control" id="transactions" placeholder="transactions">
+                    </div>
+                    <div class="col">
+                        <label for="exampleDataList" class="form-label">Datalist example</label>
+                        <input class="form-control" list="datalistOptions" id="exampleDataList"
+                            placeholder="Type to search...">
+                        <datalist id="datalistOptions">
+                            <option value="Bill">
+                            <option value="Deposit">
+                        </datalist>
+                    </div>
+                    <div class="col-2">
+                        <button type="submit" class="btn btn-light">Confirm identity</button>
+                    </div>
+                </form>
             </div>
-            <div class="row py-2">
-                <div class="navbar bg-primary">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Item</th>
-                                <th scope="col">Transactions</th>
-                                <th scope="col">Type</th>
-                                <th scope="col">Handle</th>
-                            </tr>
-                        </thead>
-                        <tbody class="table-group-divider">
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+        </div>
+        <div class="row py-2">
+            <div class="navbar bg-primary">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Item</th>
+                            <th scope="col">Transactions</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Handle</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

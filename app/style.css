@@ -1,15 +1,6 @@
-.navbarTop {
-    position: absolute;
-    z-index: 0;
-}
-
-.navbar{
-    border-radius: 5px;
-}
-
 #navbar-itens {
     margin-top: 1%;
-    padding-bottom: 50px;
+    padding-bottom: 60px;
 }
 
 /* style icons in cards */
@@ -26,6 +17,21 @@ i{
     width: 100%;
 }
 
-.card-group .col{
-    
+.fa-circle-down{
+    color:#FF6347;
+}
+.fa-circle-up{
+    color:green
+}
+
+.fa-sack-dollar{
+    color: gold;
+}
+
+.cards{
+    margin-top: -4%;
+}
+
+.navbar{
+    border-radius: 5px;
 }
