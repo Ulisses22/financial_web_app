@@ -3,9 +3,12 @@
     z-index: 0;
 }
 
+.navbar{
+    border-radius: 5px;
+}
+
 #navbar-itens {
     margin-top: 1%;
-    align-items: center;
     padding-bottom: 50px;
 }
 
@@ -23,24 +26,6 @@ i{
     width: 100%;
 }
 
-
-/* .card{
-    position: fixed;
-} */
-
-/* #cards{
-    position: static;
-    width: 100%;
+.card-group .col{
+    
 }
-
-table{
-    position: static;
-} */
-
-/* html{
-    width: 100%;
-}
-body{
-    margin: 0px;
-    padding: 0px;
-} */
