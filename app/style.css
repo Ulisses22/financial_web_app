@@ -37,3 +37,6 @@ form{
  border-radius: 5px;
 }
 
+html, body {
+    margin: 0;
+}
