@@ -1,0 +1,20 @@
+#navbar {
+    position: absolute;
+    z-index: 0;
+}
+
+#navbar-itens {
+    margin-top: 1%;
+    padding-bottom: 50px;
+}
+
+/* style icons in cards */
+.card-header {
+    display: flex;
+    align-items: center;
+}
+
+i{
+    float: right;
+    margin-left: auto;
+}
