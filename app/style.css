@@ -1,10 +1,11 @@
-#navbar {
+.navbarTop {
     position: absolute;
     z-index: 0;
 }
 
 #navbar-itens {
     margin-top: 1%;
+    align-items: center;
     padding-bottom: 50px;
 }
 
@@ -18,16 +19,28 @@ i{
     float: right;
     margin-left: auto;
 }
-
-.container{
-    border: black solid 4px;
+.card{
+    width: 100%;
 }
+
 
 /* .card{
     position: fixed;
 } */
 
-body{
-    position: fixed;
+/* #cards{
+    position: static;
     width: 100%;
 }
+
+table{
+    position: static;
+} */
+
+/* html{
+    width: 100%;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+} */
