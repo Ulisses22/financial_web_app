@@ -18,3 +18,16 @@ i{
     float: right;
     margin-left: auto;
 }
+
+.container{
+    border: black solid 4px;
+}
+
+/* .card{
+    position: fixed;
+} */
+
+body{
+    position: fixed;
+    width: 100%;
+}
