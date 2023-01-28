@@ -1,10 +1,7 @@
 const router = require('express').Router();
 const transactionController = require('../constrollers/transactionController')
 
+router.route("/transactions").post((req,res)=> transactionController.createTransaction(req,res))
 
-// Home page route.
-router.get('/transactions',(req,res)=>{
-    res.send('Home page transactions');
-})
 
 module.exports = router

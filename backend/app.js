@@ -1,14 +1,16 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const routes = require('./routes/transactions');
 
 require('dotenv').config({path: __dirname + '/environment/.env'})
 
 app.use(cors());
-app.use('/api', routes)
-// const conn = require('./db/conn');
-// conn()
+
+const conn = require('./db/conn');
+conn()
+
+const routes = require('./routes/router');
+app.use("/api/", routes)
 
 // Here we bind and listen the connection
 app.listen(process.env.PORT, () => {

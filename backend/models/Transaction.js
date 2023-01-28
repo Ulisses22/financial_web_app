@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
 const transactionSchema = new Schema({
-    _id: ObjectId,
+    // _id: ObjectId,
     description: {type: String, required: true},
     transaction: {type: String, required: true},
     type: {type: String, required: true},
@@ -16,8 +16,8 @@ const transactionSchema = new Schema({
     {timestamps: true}
 )
 
-const Service  = mongoose.model("Service", transactionSchema);
+const Transaction  = mongoose.model("Service", transactionSchema);
 
 module.exports = {
-    Service,
+    Transaction,
 }
