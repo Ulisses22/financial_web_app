@@ -1,59 +1,70 @@
+body {
+    background-color: #ffffff;
+}
+
+.cards {
+    margin-top: -5%;
+}
+
 #navbar-itens {
     margin-top: 1%;
     padding-bottom: 60px;
 }
 
-.navbar-brand{
-    color: white;
-}
-
-h2{
-    color: white;
-}
-
-/* style icons in cards */
 .card-header {
     display: flex;
     align-items: center;
 }
 
-i {
+div.card-header i {
     float: right;
     margin-left: auto;
-}
-/* style icons in cards */
-
-
-
-/* Icons */
-.fa-circle-down {
-    color: #FF6347;
-}
-
-.fa-circle-up {
-    color: green
-}
-
-.fa-sack-dollar {
-    color: gold;
-}
-
-.cards {
-    margin-top: -4%;
 }
 
 .group {
     background-color: #fff;
-    box-shadow: 0px 0px 5px #ccc;
+    box-shadow: 0px 0px 5px rgb(145, 145, 145);
     border-radius: 5px;
+    border-top: rgb(145, 145, 145) 1.5px solid;
 }
 
-body{
-    background-color: #f3f2f2;
+.bi {
+    font-size: 1rem;
+    color: rgb(58, 127, 255);
 }
 
-/* Table */
-tr td i{
+.bi-bar-chart-line-fill {
+    font-size: 3rem;
+    color: white;
+}
 
-    margin-right: 80%;
+.form-label {
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+    #navbar-itens {
+        padding-bottom: 0;
+    }
+
+    .card {
+        margin: auto;
+        max-width: 100%;
+        max-height: 90%;
+    }
+
+    .cards {
+        margin-top: 0%;
+        padding-top: 10px;
+    }
+
+    .card-title {
+        margin: 0;
+        padding: 0;
+    }
+
+    div.card-body h4 {
+        margin: 0;
+        padding: 0;
+    }
 }
