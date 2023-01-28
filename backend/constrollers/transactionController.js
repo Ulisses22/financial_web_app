@@ -11,6 +11,7 @@ const transactionController = {
                 bill: req.body.bill,
                 total: req.body.total,
             };
+            console.log(service);
             
             const response = await TransactionModel.create(service);
 
