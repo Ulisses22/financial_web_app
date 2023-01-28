@@ -8,7 +8,7 @@ require('dotenv').config({path: __dirname + '/environment/.env'})
 app.use(cors());
 app.use('/api', routes)
 const conn = require('./db/conn');
-// conn()
+conn()
 
 // Here we bind and listen the connection
 app.listen(process.env.PORT, () => {
