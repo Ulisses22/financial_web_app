@@ -1,4 +1,4 @@
-const { Service: TransactionModel } = require('../models/Transaction')
+const { Transaction: TransactionModel } = require('../models/Transaction')
 
 const transactionController = {
     createTransaction: async(req,res) =>{
@@ -10,8 +10,8 @@ const transactionController = {
                 balance: req.body.balance,
                 bill: req.body.bill,
                 total: req.body.total,
-            }
-            console.log(service);
+            };
+            
             const response = await TransactionModel.create(service);
 
             res.status(201).json({response, msg: "Service created successfully!"})
