@@ -22,7 +22,7 @@ const transactionController = {
         }
     },
 
-    selectTrasaction: async(req,res) => {
+    selectTrasactions: async(req,res) => {
         try {
             const response = await TransactionModel.find();
             res.status(200).json({response, msg: "Trasaction has been selected successfully."});

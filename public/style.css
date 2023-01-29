@@ -67,4 +67,15 @@ div.card-header i {
         margin: 0;
         padding: 0;
     }
+
+    .table{
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    #navbar-itens {
+        padding-bottom: 50px;
+        margin-top: 0%;
+    }
 }

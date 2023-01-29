@@ -6,7 +6,7 @@ router.route("/transaction").post((req,res)=>
 );
 
 router.route("/transactions").get((req,res)=>
-    transactionController.selectTrasaction(req,res)
+    transactionController.selectTrasactions(req,res)
 );
 
 router.route("/transaction").get((req,res)=>
