@@ -1,28 +1,24 @@
 const router = require('express').Router();
 const transactionController = require('../constrollers/transactionController')
 
-router.route("/new-transactions").post((req,res)=>
+router.route("/transaction").post((req,res)=>
     transactionController.createTransaction(req,res)
-)
+);
 
+router.route("/transactions").get((req,res)=>
+    transactionController.selectTrasaction(req,res)
+);
+
+router.route("/transaction").get((req,res)=>
+    transactionController.selectById(req,res)
+);
+
+router.route("/transaction").delete((req,res)=>
+    transactionController.deleteById(req,res)
+);
+
+router.route("/transaction").put((req,res)=>
+    transactionController.updateTransaction(req,res)
+);
 
 module.exports = router
-
-// const router = require('express').Router();
-// const transactionModel = require('../models/Transaction')
-
-
-// router.route("/new-transactions").post(async(req,res) =>{
-//     const transaction = new transactionModel(req.body);
-//     console.log(transaction)
-
-//     try {
-//         await transaction.create();
-
-//         res.status(201).json({response, msg: "Service created successfully!"})
-//     } catch (error) {
-//         res.status(500).send(error);
-//     }
-// });
-
-// module.exports = router
