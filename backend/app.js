@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');
 app.use("/public",express.static("public"));
 
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use("/app", index)
+app.use("/", index)
 
 
 // Here we bind and listen the connection

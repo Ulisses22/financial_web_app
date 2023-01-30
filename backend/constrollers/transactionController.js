@@ -45,13 +45,13 @@ const transactionController = {
     deleteById: async(req, res)=>{
         try {
             const service = {
-                _id: req.body._id,
+                _id: req.params._id,
             }
-            const response = await TransactionModel.findByIdAndDelete(service);
-
-            res.status(201).json({response, msg: "Transaction has been deleted successfully."});
+            await TransactionModel.findByIdAndDelete(service);
+            // const response = await TransactionModel.findByIdAndDelete(service);
+            // res.status(201).json({response, msg: "Transaction has been deleted successfully."});
         } catch (error) {
-            
+            console.log(error);
         }
     },
     updateTransaction: async(req,res) =>{

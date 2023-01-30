@@ -13,9 +13,10 @@ router.route("/transaction").get((req,res)=>
     transactionController.selectById(req,res)
 );
 
-router.route("/transaction").delete((req,res)=>
+router.route("/transaction/:_id").get((req,res)=>{
     transactionController.deleteById(req,res)
-);
+    res.status(201).redirect('/app/transactions');
+});
 
 router.route("/transaction").put((req,res)=>
     transactionController.updateTransaction(req,res)
