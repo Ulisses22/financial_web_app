@@ -44,12 +44,21 @@ const operationsController = {
                 }
             ]);
 
+            if(bill[0]==undefined){
+                bill[0]=0
+            }
+            if(balance[0]==undefined){
+                balance[0]=0
+            }
+            if(total[0]==undefined){
+                total[0]=0
+            }
 
             const data = [
                 {
-                    "bill": (undefined === bill[0].bill ) || 0,
-                    "balance": (undefined === balance[0].balance ) || 0,
-                    "total": (undefined === total[0].total ) || 0,
+                    "bill": bill[0].bill,
+                    "balance": balance[0].balance,
+                    "total": total[0].total,
                     "transactions":{
                         data: await res.json()
                     }

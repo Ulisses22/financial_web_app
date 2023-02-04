@@ -77,15 +77,15 @@
             <form class="row px-0 mb-3 mx-auto p-1" id="form" method="POST" action=".././api/new-transactions/">
                 <div class="mx-auto col-12 col-sm-4 col-md-12 col-lg-4">
                     <label class="form-label">Description</label>
-                    <input type="text" class="form-control" name="description" placeholder="Ex: Trip">
+                    <input type="text" class="form-control" name="description" placeholder="Ex: Trip" required>
                 </div>
                 <div class="mx-auto col-12 col-sm-4 col-md-12 col-lg-4">
                     <label class="form-label">Transaction</label>
-                    <input type="text" class="form-control" name="transaction" placeholder="Ex: 1500">
+                    <input type="curren" class="form-control" name="transaction" placeholder="Ex: 1500" required>
                 </div>
                 <div class="mx-auto col-12 col-sm-4 col-md-12 col-lg-4 ">
                     <label class="form-label">Type transaction</label>
-                    <select class="form-select" name="type" aria-label="Type to search...">
+                    <select class="form-select" name="type" aria-label="Type to search..." required>
                         <option value="Deposit" selected>Deposit</option>
                         <option value="Bill">Bill</option>
                     </select>

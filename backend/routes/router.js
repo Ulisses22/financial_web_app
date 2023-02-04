@@ -7,13 +7,12 @@ router.use("/api", transactionController)
 router.route("/").get((req, res) =>
 
     operationsController.selectTransactions().then((result) => {
-        console.log(result.total);
         try {
             res.render("index", {
                 result: result.transactions.data,
-                bill: result.bill,
-                balance: result.balance,
-                total: result.total,
+                bill: (result.bill === undefined ? '0,00' : result.bill),
+                balance:(result.balance === undefined ? '0,00' : result.balance),
+                total: (result.total === undefined ? '0,00' : result.total),
             })
         } catch (error) {
             res.render("404")
