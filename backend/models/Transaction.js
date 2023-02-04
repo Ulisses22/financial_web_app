@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const TransactionSchema = new mongoose.Schema({
     description: {type: String},
-    transaction: {type: String},
+    transaction: {type: Number},
     type: {type: String},
     balance: {type: Number},
     bill: {type: Number},
@@ -12,7 +12,9 @@ const TransactionSchema = new mongoose.Schema({
     // Saves the date and time when inserting or updating any data
     {timestamps: true}
 )
+
 const Transaction = mongoose.model("Transaction", TransactionSchema);
+
 module.exports = {
-    Transaction,
+    Transaction
 }

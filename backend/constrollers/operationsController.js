@@ -1,3 +1,4 @@
+const { Transaction: TransactionModel } = require('../models/Transaction')
 
 const operationsController = {
     selectTransactions: async () => {
@@ -7,27 +8,69 @@ const operationsController = {
             return data;
         }        
     },
-    deleteTransactions: async (_id,res) => {
-        console.log(_id);
-        await fetch('http://localhost:3000/api/transaction', {
-            method: 'DELETE',
-            body: JSON.stringify({
-                _id_: req.paramn._id
-            }),
-            headers: {
-                'Content-type': 'application/x-www-form-urlencoded'
-            }
-        }).then(function (res) {
-            if(res.ok){
-                console.log(res.json());
-                return res.json();
-            }
-            return Promise.reject(res);
-        }).catch(function (error) {
-            console.warn('Something went wrong.', error);
-        });
+    bill: async () => {
+        try {
+            const bill = await TransactionModel.aggregate([
+                {
+                    $match: {"type": "Bill"},
+                }
+                ,{
+                    $group: {
+                        _id: "bill",
+                        "bill":{
+                            $sum:"$transaction"
+                        },
+                    },
+                    
+                }
+            ])
+            return bill;
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    total: async () => {
+        try {
+            const total = await TransactionModel.aggregate([
+                {
+                    $group: {
+                        _id: "total",
+                        "total":{
+                            $sum:"$transaction"
+                        },
+                    },
+                    
+                }
+            ])
+            return total;
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    balance: async () => {
+        try {
+            const balance = await TransactionModel.aggregate([
+                {
+                    $match: {"type":"Deposit"}
+                }
+                ,{
+                    $group: {
+                        _id: "balance",
+                        "balance":{
+                            $sum:"$transaction"
+                        },
+                    },
+                    
+                }
+            ])
+            return balance;
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
 
-module.exports = operationsController;
+
+module.exports =  operationsController 
+
 

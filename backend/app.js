@@ -13,7 +13,9 @@ app.use("/public",express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use("/", index)
 
-
+app.get("*",(req,res)=>{
+    res.render("404")
+})
 // Here we bind and listen the connection
 app.listen(process.env.PORT, () => {
     conn()

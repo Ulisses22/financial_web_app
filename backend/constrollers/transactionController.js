@@ -1,48 +1,48 @@
 const { Transaction: TransactionModel } = require('../models/Transaction')
 
 const transactionController = {
-    createTransaction: async(req,res) =>{
+    createTransaction: async (req, res) => {
 
         try {
             const service = {
                 description: req.body.description,
                 transaction: req.body.transaction,
                 type: req.body.type,
-                balance: req.body.balance,
-                bill: req.body.bill,
-                total: req.body.total,
+                // balance: req.body.balance,
+                // bill: req.body.bill,
+                // total: req.body.total,
             };
-            console.log(service);
-            
+
             const response = await TransactionModel.create(service);
 
-            res.status(201).json({response, msg: "Service created successfully!"})
+            // res.status(201).json({response, msg: "Service created successfully!"})
+            res.status(201).redirect('/');
         } catch (error) {
             console.log(error);
         }
     },
 
-    selectTrasactions: async(req,res) => {
+    selectTrasactions: async (req, res) => {
         try {
             const response = await TransactionModel.find();
-            res.status(200).json({response, msg: "Trasaction has been selected successfully."});
+            res.status(200).json({ response, msg: "Trasaction has been selected successfully." });
         } catch (error) {
             console.log(error);
         }
     },
-    selectById: async(req,res) => {
-        try{
+    selectById: async (req, res) => {
+        try {
             const service = {
                 _id: req.body._id,
             }
             const response = await TransactionModel.findById(service);
 
-            res.status(200).json({response, msg: "Transaction has been selected successfully."});
-        }catch (error) {
+            res.status(200).json({ response, msg: "Transaction has been selected successfully." });
+        } catch (error) {
             console.log(error);
         }
     },
-    deleteById: async(req, res)=>{
+    deleteById: async (req, res) => {
         try {
             const service = {
                 _id: req.params._id,
@@ -54,7 +54,7 @@ const transactionController = {
             console.log(error);
         }
     },
-    updateTransaction: async(req,res) =>{
+    updateTransaction: async (req, res) => {
 
         try {
             const _id = req.body._id;
@@ -67,11 +67,11 @@ const transactionController = {
                 bill: req.body.bill,
                 total: req.body.total,
             };
-            
-            await TransactionModel.updateOne({_id},service);
+
+            await TransactionModel.updateOne({ _id }, service);
             const response = await TransactionModel.findById(_id);
 
-            res.status(201).json({response, msg: "Service has been updated successfully."});
+            res.status(201).json({ response, msg: "Service has been updated successfully." });
         } catch (error) {
             console.log(error);
         }

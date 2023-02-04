@@ -67,38 +67,37 @@
                     </div>
                     <div class="card-body pt-1 p-3 p-lg-3">
 
-                        <h4 class="card-text">$ 10.000</h4>
+                        <h4 class="card-text">$ </h4>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="row mx-0 group">
-            <form class="row px-0 mb-3 mx-auto p-1">
+            <form class="row px-0 mb-3 mx-auto p-1" id="form" method="POST" action=".././api/new-transactions/">
                 <div class="mx-auto col-12 col-sm-4 col-md-12 col-lg-4">
                     <label class="form-label">Description</label>
-                    <input type="text" class="form-control" placeholder="Ex: Trip">
+                    <input type="text" class="form-control"  name="description"placeholder="Ex: Trip">
                 </div>
                 <div class="mx-auto col-12 col-sm-4 col-md-12 col-lg-4">
                     <label class="form-label">Transaction</label>
-                    <input type="text" class="form-control" placeholder="Ex: 1500">
+                    <input type="text" class="form-control"  name="transaction"placeholder="Ex: 1500">
                 </div>
                 <div class="mx-auto col-12 col-sm-4 col-md-12 col-lg-4 ">
                     <label class="form-label">Type transaction</label>
-                    <input class="form-control" list="datalistOptions" placeholder="Type to search...">
-                    <datalist id="datalistOptions">
-                        <option value="Bill">
-                        <option value="Deposit">
-                    </datalist>
+                    <select class="form-select"  name="type" aria-label="Type to search...">
+                        <option value="Deposit" selected>Deposit</option>
+                        <option value="Bill">Bill</option>
+                      </select>
                 </div>
                 <div class="col d-grid mt-3">
-                    <button type="submit" class="btn btn-primary">Confirm</button>
+                    <button type="submit" class="btn btn-primary">Confirm transaction</button>
                 </div>
             </form>
         </div>
 
         <!-- TABLE -->
-        <table class="table mt-2 p-1 group">
+        <table class="table mt-2 p-1 group" id="_table">
             <thead>
                 <tr>
                     <th scope="col">#</th>
