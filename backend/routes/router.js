@@ -5,11 +5,18 @@ const operationsController = require("../constrollers/operationsController")
 
 router.use("/api", transactionController)
 router.route("/").get((req, res) =>
+
     operationsController.selectTransactions().then((result) => {
+        console.log(result.total);
         try {
-            res.render("index", { result: result })
+            res.render("index", {
+                result: result.transactions.data,
+                bill: result.bill,
+                balance: result.balance,
+                total: result.total,
+            })
         } catch (error) {
-            res.render("500")
+            res.render("404")
         }
     })
 );

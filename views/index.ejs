@@ -44,7 +44,7 @@
                         <i class="fa fa-arrow-up fa-1x text-success"></i>
                     </div>
                     <div class="card-body pt-1 p-3 p-lg-3 p-2 p-lg-3">
-                        <h4 class="card-text">$ 100.000</h4>
+                        <h4 class="card-text">$ <%- balance %> </h4>
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                         <i class="fa fa-arrow-down fa-1x text-danger"></i>
                     </div>
                     <div class="card-body pt-1 p-3 p-lg-3">
-                        <h4 class="card-text">$ 100.000</h4>
+                        <h4 class="card-text">$ <%- bill %> </h4>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
                     </div>
                     <div class="card-body pt-1 p-3 p-lg-3">
 
-                        <h4 class="card-text">$ </h4>
+                        <h4 class="card-text">$ <%- total %> </h4>
                     </div>
                 </div>
             </div>
@@ -77,18 +77,18 @@
             <form class="row px-0 mb-3 mx-auto p-1" id="form" method="POST" action=".././api/new-transactions/">
                 <div class="mx-auto col-12 col-sm-4 col-md-12 col-lg-4">
                     <label class="form-label">Description</label>
-                    <input type="text" class="form-control"  name="description"placeholder="Ex: Trip">
+                    <input type="text" class="form-control" name="description" placeholder="Ex: Trip">
                 </div>
                 <div class="mx-auto col-12 col-sm-4 col-md-12 col-lg-4">
                     <label class="form-label">Transaction</label>
-                    <input type="text" class="form-control"  name="transaction"placeholder="Ex: 1500">
+                    <input type="text" class="form-control" name="transaction" placeholder="Ex: 1500">
                 </div>
                 <div class="mx-auto col-12 col-sm-4 col-md-12 col-lg-4 ">
                     <label class="form-label">Type transaction</label>
-                    <select class="form-select"  name="type" aria-label="Type to search...">
+                    <select class="form-select" name="type" aria-label="Type to search...">
                         <option value="Deposit" selected>Deposit</option>
                         <option value="Bill">Bill</option>
-                      </select>
+                    </select>
                 </div>
                 <div class="col d-grid mt-3">
                     <button type="submit" class="btn btn-primary">Confirm transaction</button>
@@ -108,33 +108,33 @@
                 </tr>
             </thead>
             <tbody class="table-group-divider">
-                
-                    <% result.response.forEach((transaction,index)=> {%>
-                        <tr>
-                            <th scope="row">
-                                <%= index+1 %>
-                            </th>
-                            <td>
-                                <%= transaction.description %>
-                            </td>
-                            <td>
-                                <%= transaction.transaction %>
-                            </td>
-                            <td>
-                                <% if(transaction.type=='Deposit' ) {%>
-                                    <i class="fa fa-arrow-up fa-1x text-success"></i>
-                                    <% }else{ %>
-                                        <i class="fa fa-arrow-down fa-1x text-danger"></i>
-                                        <% } %>
-                            </td>
-                            <td>
-                                <a href=".././api/transaction/<%= transaction._id %>">
-                                    <p class="bi bi-trash3-fill m-0 px-3"></p>
-                                </a>
-                                <!-- <p class="bi bi-trash m-0 px-3"></p> -->
-                            </td>
-                        </tr>
-                        <% });%>
+
+                <% result.response.forEach((transaction,index)=> {%>
+                    <tr>
+                        <th scope="row">
+                            <%= index+1 %>
+                        </th>
+                        <td>
+                            <%= transaction.description %>
+                        </td>
+                        <td>
+                            <%= transaction.transaction %>
+                        </td>
+                        <td>
+                            <% if(transaction.type=='Deposit' ) {%>
+                                <i class="fa fa-arrow-up fa-1x text-success"></i>
+                                <% }else{ %>
+                                    <i class="fa fa-arrow-down fa-1x text-danger"></i>
+                                    <% } %>
+                        </td>
+                        <td>
+                            <a href=".././api/transaction/<%= transaction._id %>">
+                                <p class="bi bi-trash3-fill m-0 px-3"></p>
+                            </a>
+                            <!-- <p class="bi bi-trash m-0 px-3"></p> -->
+                        </td>
+                    </tr>
+                    <% });%>
             </tbody>
         </table>
     </div>

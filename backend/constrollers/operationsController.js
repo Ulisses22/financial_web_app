@@ -4,12 +4,6 @@ const operationsController = {
     selectTransactions: async () => {
         const res = await fetch('http://localhost:3000/api/transactions');
         if (res.ok) {
-            const data = await res.json();
-            return data;
-        }        
-    },
-    bill: async () => {
-        try {
             const bill = await TransactionModel.aggregate([
                 {
                     $match: {"type": "Bill"},
@@ -24,13 +18,6 @@ const operationsController = {
                     
                 }
             ])
-            return bill;
-        } catch (error) {
-            console.log(error);
-        }
-    },
-    total: async () => {
-        try {
             const total = await TransactionModel.aggregate([
                 {
                     $group: {
@@ -42,13 +29,6 @@ const operationsController = {
                     
                 }
             ])
-            return total;
-        } catch (error) {
-            console.log(error);
-        }
-    },
-    balance: async () => {
-        try {
             const balance = await TransactionModel.aggregate([
                 {
                     $match: {"type":"Deposit"}
@@ -57,17 +37,29 @@ const operationsController = {
                     $group: {
                         _id: "balance",
                         "balance":{
-                            $sum:"$transaction"
+                            $sum:"$transaction",
                         },
                     },
                     
                 }
-            ])
-            return balance;
-        } catch (error) {
-            console.log(error);
-        }
-    }
+            ]);
+
+
+            const data = [
+                {
+                    "bill": (undefined === bill[0].bill ) || 0,
+                    "balance": (undefined === balance[0].balance ) || 0,
+                    "total": (undefined === total[0].total ) || 0,
+                    "transactions":{
+                        data: await res.json()
+                    }
+                },
+            ]
+            
+            // console.log(data)
+            return data[0];
+        }        
+    },
 }
 
 
