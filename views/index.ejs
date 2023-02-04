@@ -40,34 +40,34 @@
             <div class="col-12 col-sm-4 col-md-4 col-lg-4 pe-lg-2 pe-sm-2 px-0">
                 <div class="card group">
                     <div class="card-header">
-                        <h5 class="card-title">Balance</h5>
-                        <i class="fa fa-arrow-up fa-1x text-success"></i>
+                        <h5 class="card-title">Total</h5>
+                        <i class="fa fa-money-bill-alt fa-1x text-primary"></i>
                     </div>
-                    <div class="card-body pt-1 p-3 p-lg-3 p-2 p-lg-3">
-                        <h4 class="card-text">$ <%- balance %> </h4>
+                    <div class="card-body pt-1 p-3 p-lg-3">
+
+                        <h4 class="card-text"><%= total %></h4>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-sm-4 col-md-4 col-lg-4 pe-lg-2 pe-sm-2 px-0">
                 <div class="card group">
                     <div class="card-header">
-                        <h5 class="card-title">Bill</h5>
-                        <i class="fa fa-arrow-down fa-1x text-danger"></i>
+                        <h5 class="card-title">Balance</h5>
+                        <i class="fa fa-arrow-up fa-1x text-success"></i>
                     </div>
-                    <div class="card-body pt-1 p-3 p-lg-3">
-                        <h4 class="card-text">$ <%- bill %> </h4>
+                    <div class="card-body pt-1 p-3 p-lg-3 p-2 p-lg-3">
+                        <h4 class="card-text"> <%= balance %> </h4>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-sm-4 col-md-4 col-lg-4 px-0">
                 <div class="card group">
                     <div class="card-header">
-                        <h5 class="card-title">Total</h5>
-                        <i class="fa fa-money-bill-alt fa-1x text-primary"></i>
+                        <h5 class="card-title">Bill</h5>
+                        <i class="fa fa-arrow-down fa-1x text-danger"></i>
                     </div>
                     <div class="card-body pt-1 p-3 p-lg-3">
-
-                        <h4 class="card-text">$ <%- total %> </h4>
+                        <h4 class="card-text"> <%= bill %> </h4>
                     </div>
                 </div>
             </div>
@@ -97,7 +97,7 @@
         </div>
 
         <!-- TABLE -->
-        <table class="table mt-2 p-1 group" id="_table">
+        <table class="table mt-2 p-1 mb-2 group" id="_table">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -115,13 +115,16 @@
                             <%= index+1 %>
                         </th>
                         <td>
-                            <%= transaction.description %>
+                            <%= helper(transaction.description) %>
                         </td>
                         <td>
-                            <%= transaction.transaction %>
+                            <%= transaction.transaction.toLocaleString('en-US', {
+                                style: 'currency',
+                                currency: 'USD',
+                            }) %>
                         </td>
                         <td>
-                            <% if(transaction.type=='Deposit' ) {%>
+                            <% if(transaction.type=='Deposit') {%>
                                 <i class="fa fa-arrow-up fa-1x text-success"></i>
                                 <% }else{ %>
                                     <i class="fa fa-arrow-down fa-1x text-danger"></i>
