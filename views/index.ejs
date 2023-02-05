@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     <title>Financial Management - Demo</title>
     <!-- SOURCE -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -13,12 +13,6 @@
 </head>
 
 <body>
-    <!-- SOURCE -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/61b0bb6108.js" crossorigin="anonymous"></script>
-
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg bg-primary">
         <div class="container-fluid justify-content-center" id="navbar-itens">
@@ -72,16 +66,16 @@
                 </div>
             </div>
         </div>
-
+        <!-- FORM -->
         <div class="row mx-0 group">
             <form class="row px-0 mb-3 mx-auto p-1" id="form" method="POST" action=".././api/new-transactions/">
                 <div class="mx-auto col-12 col-sm-4 col-md-12 col-lg-4">
                     <label class="form-label">Description</label>
-                    <input type="text" class="form-control" name="description" placeholder="Ex: Trip" required>
+                    <input type="text" class="form-control" name="description" placeholder="Ex: Trip" required maxlength="25">
                 </div>
                 <div class="mx-auto col-12 col-sm-4 col-md-12 col-lg-4">
                     <label class="form-label">Transaction</label>
-                    <input type="curren" class="form-control" name="transaction" placeholder="Ex: 1500" required>
+                    <input type="currency" currency="USD" class="form-control" name="transaction" placeholder="Ex: 1500" required maxlength="15">
                 </div>
                 <div class="mx-auto col-12 col-sm-4 col-md-12 col-lg-4 ">
                     <label class="form-label">Type transaction</label>
@@ -97,50 +91,57 @@
         </div>
 
         <!-- TABLE -->
-        <table class="table mt-2 p-1 mb-2 group" id="_table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Transaction</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody class="table-group-divider">
-
-                <% result.response.forEach((transaction,index)=> {%>
+        <div class="table-responsive-sm group mt-2 mb-2">
+            <table class="table table-sm table-striped" id="_table">
+                <thead>
                     <tr>
-                        <th scope="row">
-                            <%= index+1 %>
-                        </th>
-                        <td>
-                            <%= helper(transaction.description) %>
-                        </td>
-                        <td>
-                            <%= transaction.transaction.toLocaleString('en-US', {
-                                style: 'currency',
-                                currency: 'USD',
-                            }) %>
-                        </td>
-                        <td>
-                            <% if(transaction.type=='Deposit') {%>
-                                <i class="fa fa-arrow-up fa-1x text-success"></i>
-                                <% }else{ %>
-                                    <i class="fa fa-arrow-down fa-1x text-danger"></i>
-                                    <% } %>
-                        </td>
-                        <td>
-                            <a href=".././api/transaction/<%= transaction._id %>">
-                                <p class="bi bi-trash3-fill m-0 px-3"></p>
-                            </a>
-                            <!-- <p class="bi bi-trash m-0 px-3"></p> -->
-                        </td>
+                        <th scope="col">#</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Transaction</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Action</th>
                     </tr>
-                    <% });%>
-            </tbody>
-        </table>
+                </thead>
+                <tbody class="table-group-divider">
+    
+                    <% result.response.forEach((transaction,index)=> {%>
+                        <tr>
+                            <th scope="row">
+                                <%= index+1 %>
+                            </th>
+                            <td >
+                                <%= helper(transaction.description) %>
+                            </td>
+                            <td>
+                                <%= transaction.transaction.toLocaleString('en-US', {
+                                    style: 'currency',
+                                    currency: 'USD',
+                                }) %>
+                            </td>
+                            <td>
+                                <% if(transaction.type=='Deposit') {%>
+                                    <i class="fa fa-arrow-up fa-1x text-success"></i>
+                                    <% }else{ %>
+                                        <i class="fa fa-arrow-down fa-1x text-danger"></i>
+                                        <% } %>
+                            </td>
+                            <td>
+                                <a href=".././api/transaction/<%= transaction._id %>">
+                                    <p class="bi bi-trash3-fill m-0 px-3"></p>
+                                </a>
+                                <!-- <p class="bi bi-trash m-0 px-3"></p> -->
+                            </td>
+                        </tr>
+                        <% });%>
+                </tbody>
+            </table>
+        </div>
     </div>
+    <!-- SOURCE -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/61b0bb6108.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
