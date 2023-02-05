@@ -37,6 +37,9 @@ div.card-header i {
     font-size: 3rem;
     color: white;
 }
+.bi-arrow-down-circle-fill{
+    font-size: 20px;
+}
 
 .form-label {
     font-weight: bold;
