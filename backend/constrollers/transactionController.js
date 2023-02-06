@@ -24,7 +24,7 @@ const transactionController = {
 
     selectTrasactions: async (req, res) => {
         try {
-            const response = await TransactionModel.find();
+            const response = await TransactionModel.find({},'-createdAt -updatedAt -__v');
             res.status(200).json({ response, msg: "Trasaction has been selected successfully." });
         } catch (error) {
             console.log(error);
