@@ -5,6 +5,8 @@ That is a financial web application with Bootstrap 5 and Mongoose(Atlas)
 
 - For the download icon in the table is possible to download the report in excel.
 
+- To connect NodeJS with the frontend I used the EJS Template Engine.
+
 ### How to install and run the project
 
 - environment/.env
