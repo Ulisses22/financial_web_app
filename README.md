@@ -20,14 +20,14 @@ npm install
 # Run app
 npm start
 ```
+### Future features
+- Pagination
+- Toast alerts
+- More ways to manage
 
 ### Preview
 
 ![InCollage_20230218_223246681](https://user-images.githubusercontent.com/112980693/219902613-42660d35-8037-4887-8a2a-9359ebeda57d.jpg)
 
-### Future features
-- Pagination
-- Toast alerts
-- More ways to manage
 
 #### License
