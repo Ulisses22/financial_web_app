@@ -40,12 +40,12 @@ router.route("/download").get((req, res) => {
             
 
             res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-            res.setHeader('Content-Disposition', 'attachment; filename=Transactions_.xlsx');
+            res.setHeader('Content-Disposition', `attachment; filename=Transactions_${new Date().toLocaleDateString()}.xlsx`);
             res.send(file);
         } catch (error) {
             res.render("501")
         }
-    })
+    })      
 });
 
 module.exports = router;
