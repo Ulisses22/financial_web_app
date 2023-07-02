@@ -31,3 +31,5 @@ npm start
 ![InCollage_20230218_223246681](https://user-images.githubusercontent.com/112980693/219902613-42660d35-8037-4887-8a2a-9359ebeda57d.jpg)
 
 #### License
+ISC License
+Copyright <2022> <Ulisses>
